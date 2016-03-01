@@ -14,6 +14,7 @@ RUN apt-get install -y pkg-config
 #RUN apt-get install -y cmake 
 RUN apt-get install -y build-essential 
 RUN apt-get install -y tcpdump 
+RUN apt-get install -y tree 
 RUN apt-get install -y screen # Install go 
 #RUN curl https://go.googlecode.com/files/go1.2.1.linux-amd64.tar.gz | tar -C /usr/local -zx 
 #ENV GOROOT /usr/local/go ENV PATH /usr/local/go/bin:$PATH 
