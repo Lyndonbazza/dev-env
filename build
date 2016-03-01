@@ -1,0 +1,3 @@
+docker stop dev
+docker rm dev
+docker build -t dev .
