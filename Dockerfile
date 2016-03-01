@@ -39,11 +39,11 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 RUN unzip awscli-bundle.zip
 RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
-VOLUME /var/shared WORKDIR /home/dev 
 ENV HOME /home/dev 
 COPY vimrc /home/dev/.vimrc 
 COPY vim /home/dev/.vim 
 COPY bash_profile /home/dev/.bash_profile 
+COPY bash_profile /home/dev/.bashrc
 ADD gitconfig /home/dev/.gitconfig 
 # Link in shared parts of the home directory 
 RUN ln -s /var/shared/.ssh 
