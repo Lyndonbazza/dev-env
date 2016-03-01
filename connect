@@ -1,1 +1,1 @@
-docker run -it --user dev -p 2222:22 -v ./:/home/dev/server --rm dev bash
+docker run -it --user dev -p 2222:22 -v ${PWD}:/home/dev/server --rm dev bash

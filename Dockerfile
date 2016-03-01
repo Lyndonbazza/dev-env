@@ -41,15 +41,15 @@ RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
 VOLUME /var/shared WORKDIR /home/dev 
 ENV HOME /home/dev 
-ADD vimrc /home/dev/.vimrc 
-ADD vim /home/dev/.vim 
-ADD bash_profile /home/dev/.bash_profile 
+COPY vimrc /home/dev/.vimrc 
+COPY vim /home/dev/.vim 
+COPY bash_profile /home/dev/.bash_profile 
 ADD gitconfig /home/dev/.gitconfig 
 # Link in shared parts of the home directory 
 RUN ln -s /var/shared/.ssh 
 RUN ln -s /var/shared/.bash_history 
 RUN ln -s /var/shared/.maintainercfg 
-RUN chown -R dev: /home/dev
+RUN chown -R dev:dev /home/dev/
 
 EXPOSE 22
 
