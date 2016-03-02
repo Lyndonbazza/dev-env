@@ -1,3 +1,20 @@
-docker stop dev
-docker rm dev
+docker stop dev-env
+docker rm dev-env
+
 docker build -t dev .
+
+docker run -it --user dev \
+    -p 2222:22 \
+    -p 80:80 \
+    -p 81:81 \
+    -p 84:84 \
+    -p 3307:3307 \
+    -p 4444:4444 \
+    -p 5999:5999 \
+    -p 5900:5900 \
+    -p 11211:11211 \
+    -p 8080:8080 \
+    -v ${PWD}/files:/home/dev/server \
+    --name dev-env \
+    -d dev
+

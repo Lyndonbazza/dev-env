@@ -40,6 +40,8 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 RUN unzip awscli-bundle.zip
 RUN ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws
 
+
+
 ENV HOME /home/dev 
 COPY vimrc /home/dev/.vimrc 
 COPY vim /home/dev/.vim 
@@ -51,6 +53,7 @@ RUN ln -s /var/shared/.ssh
 RUN ln -s /var/shared/.bash_history 
 RUN ln -s /var/shared/.maintainercfg 
 RUN chown -R dev:dev /home/dev/
+RUN echo 'dev ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 EXPOSE 22
 
